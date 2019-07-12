@@ -17,7 +17,6 @@ def load_data(file_path):
 
     return dataSet
 
-
 ## 计算k=1时的支持度，返回符合支持度和不符合支持度，类型为字典，key=item_name,value=item_count
 def cut_tree(data_count, data_num, support):
     data = dict([(phone, num) for phone, num in data_count.items() if (num * 1.0 / data_num) >= support])
@@ -99,7 +98,7 @@ def first_num_count(dataSet):
 ## 函数主程序入口
 if __name__ == '__main__':
 
-    #     dataSet = load_data(file_path)
+    # dataSet = load_data(file_path)
     dataSet = {'A': ['Mix3', 'XR', 'mate20'], 'B': ['Mix3', 'P20', 'nexs'], 'C': ['Mix3', 'P20', 'nexs', 'mate20'],
                'D': ['P20', 'nexs']}
     print("用户-物品倒排列表: ", dataSet)
@@ -179,7 +178,6 @@ if __name__ == '__main__':
             list(set(phone) - set(conf_i[1:len(conf_i) - 1].replace("'", "").replace(", ", ",").split(","))))
         conf_gather.append(phone)
         dim_conf_gather.append(conf_gather)
-    #         print conf_i[1:len(conf_i)-1].replace("'","").replace(", ",",").split(",")
     print '所有项集的集合:', dim_conf_gather
 
     ## 带入计算，每个项集的在用户-物品倒排表出现的次数
